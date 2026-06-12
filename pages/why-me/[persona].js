@@ -111,9 +111,9 @@ export default function WhyMePage() {
   const router = useRouter()
   const { query } = router
   
-  const personaParam = query.persona as string || 'executive'
-  const firstname = query.firstname as string || 'Test'
-  const company = query.company as string || 'TestCorp'
+  const personaParam = query.persona || 'executive'
+  const firstname = query.firstname || 'Test'
+  const company = query.company || 'TestCorp'
   
   useEffect(() => {
     const initFaq = () => {
@@ -305,14 +305,8 @@ export async function getStaticPaths() {
       { params: { persona: 'growth' } },
       { params: { persona: 'executive' } },
       { params: { persona: 'sales' } },
-      { params: { persona: '1' } },
-      { params: { persona: '2' } },
-      { params: { persona: '3' } },
-      { params: { persona: '4' } },
-      { params: { persona: '5' } },
-      { params: { persona: '6' } },
     ],
-    fallback: 'blocking',
+    fallback: false,
   }
 }
 

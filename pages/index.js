@@ -6,7 +6,7 @@ export default function Home() {
   
   useEffect(() => {
     // Redirige vers /why-me avec des paramètres par défaut
-    router.push('/why-me?persona=executive&firstname=Visiteur&company=Votre%20Entreprise')
+    router.push('/why-me/executive?firstname=Visiteur&company=Votre%20Entreprise')
   }, [])
   
   return (
