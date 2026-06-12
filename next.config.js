@@ -1,13 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // output: 'export',  // Removed: using SSR for dynamic pages with query params
   images: {
     unoptimized: true,
   },
-  // Base path for GitHub Pages or Vercel
-  // basePath: process.env.NODE_ENV === 'production' ? '/whyme' : '',
-  // Asset prefix for CDN
-  // assetPrefix: process.env.NODE_ENV === 'production' ? '/whyme/' : '',
+  // Enable React Strict Mode
+  reactStrictMode: true,
+  // For Vercel deployment
+  // No export needed - Vercel handles SSR natively
 }
 
 module.exports = nextConfig
