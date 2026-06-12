@@ -3,21 +3,13 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/next",
-      "config": { 
-        "installCommand": "npm install",
-        "zeroConfig": true
-      }
+      "use": "@vercel/next"
     }
   ],
   "routes": [
     {
-      "src": "/why-me(.*)",
+      "src": "/why-me/(.*)",
       "dest": "/why-me"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/"
     }
   ]
 }
