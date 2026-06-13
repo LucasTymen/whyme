@@ -4,10 +4,17 @@ import { useRouter } from 'next/router'
 
 const personaContent = {
   business: {
-    title: 'Transformer des problèmes en opportunités',
-    lead: 'Acquisition, qualification, optimisation, automatisation : les mécanismes qui permettent de développer une activité.',
-    whyContact: (company) => `${company} a besoin de quelqu\'un qui comprend les mécanismes permettant de développer une activité.`,
-    whyContactDetail: 'Acquisition, qualification, optimisation, automatisation : c\'est précisément à l\'intersection de ces compétences que se situe mon parcours.',
+    title: 'Pourquoi votre entreprise a besoin de moi',
+    whyContact: (company) => `${company} semble reposer sur une logique avant tout orientée entreprise.`,
+    whyContactDetail: 'C\'est précisément ce qui a retenu mon attention et ce que je peux concrètement apporter.',
+    longDetail: 'Après plus de vingt ans passés à comprendre des environnements complexes, des processus et des organisations, je souhaite mettre cette capacité d\'analyse au service du développement commercial et de la création de valeur.',
+    whatICanBring: [
+      'Compréhension rapide d\'environnements complexes',
+      'Capacité à vulgariser des sujets techniques',
+      'Approche structurée de la prospection',
+      'Autonomie',
+      'Culture du résultat'
+    ],
     cards: [
       {
         problem: 'Structurer et qualifier un volume important de données pour obtenir des contacts exploitables.',
@@ -30,10 +37,17 @@ const personaContent = {
     ]
   },
   growth: {
-    title: 'La croissance se situe souvent à l\'intersection',
-    lead: 'Des données, des outils, de l\'exécution et du business. Délivrabilité, acquisition, performance, automatisation, amélioration continue.',
-    whyContact: (company) => `${company} a besoin de quelqu\'un qui raisonne en système.`,
-    whyContactDetail: 'Un profil capable de comprendre à la fois les données, les outils, l\'exécution et les objectifs business pour voir des opportunités là où les profils purement marketing ou purement commerciaux ne les voient pas.',
+    title: 'Pourquoi votre entreprise a besoin de moi',
+    whyContact: (company) => `${company} semble nécessiter une compréhension fine des données, des outils et de l\'acquisition.`,
+    whyContactDetail: 'Mon parcours m\'a conduit à travailler sur l\'automatisation, l\'analyse, l\'amélioration des processus et la génération d\'opportunités commerciales.',
+    longDetail: 'Ce qui m\'intéresse n\'est pas uniquement d\'utiliser des outils. C\'est identifier les frictions, comprendre les besoins et construire des solutions qui permettent de gagner du temps, de la visibilité ou des opportunités.',
+    whatICanBring: [
+      'Automatisation',
+      'Structuration de données',
+      'Compréhension des outils',
+      'Génération de leads',
+      'Optimisation des processus'
+    ],
     cards: [
       {
         problem: 'Beaucoup de professionnels découvrent progressivement les sujets liés à la donnée, aux outils ou à l\'automatisation.',
@@ -50,10 +64,17 @@ const personaContent = {
     ]
   },
   executive: {
-    title: 'La cohérence du parcours',
-    lead: 'Stabilité, maturité, autonomie, potentiel d\'intégration : ce que recherchent les organisations.',
-    whyContact: (company) => `Je comprends pourquoi une organisation comme ${company} recherche stabilité, maturité et autonomie.`,
-    whyContactDetail: 'Mon parcours, bien que non conventionnel, offre précisément cette cohérence : une expérience terrain de plus de vingt ans, une capacité à créer de la valeur rapidement, et une volonté de construire dans la durée.',
+    title: 'Pourquoi votre entreprise a besoin de moi',
+    whyContact: (company) => `Je m\'intéresse particulièrement aux organisations qui recherchent des profils capables de comprendre rapidement un environnement complexe et de devenir opérationnels.`,
+    whyContactDetail: 'Mon expérience m\'a appris à naviguer entre les sujets techniques, humains et organisationnels.',
+    longDetail: 'Cette transversalité me permet souvent d\'identifier rapidement les besoins, les risques et les opportunités.',
+    whatICanBring: [
+      'Vision transverse',
+      'Autonomie',
+      'Capacité d\'analyse',
+      'Compréhension des enjeux business',
+      'Capacité d\'exécution'
+    ],
     cards: [
       {
         problem: 'Après plus de vingt ans dans des environnements techniques et opérationnels, trouver un environnement où contribuer rapidement.',
@@ -198,7 +219,24 @@ export default function WhyMePage() {
         <div className="lp-container">
           <h1 className="lp-title">{content.title}</h1>
           <div className="lp-block">
-            <p className="lp-lead">{content.lead}</p>
+            <p>{content.whyContact(company)}</p>
+            <p>{content.whyContactDetail}</p>
+            <p>{content.longDetail}</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="lp-section-divider"></div>
+
+      <div className="lp-section">
+        <div className="lp-container">
+          <h2 className="lp-subtitle">Ce que je peux apporter</h2>
+          <div className="lp-block">
+            <ul className="lp-list">
+              {content.whatICanBring.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
@@ -245,9 +283,6 @@ export default function WhyMePage() {
               </div>
             </div>
           </div>
-          <p style={{textAlign: 'center', marginTop: '1.5rem', color: 'var(--lp-muted)'}}>
-            Visuellement c\'est très fort. Et ça remplace 10 lignes de texte.
-          </p>
         </div>
       </div>
 
@@ -255,10 +290,13 @@ export default function WhyMePage() {
 
       <div className="lp-section">
         <div className="lp-container">
-          <h2 className="lp-subtitle">Pourquoi j\'ai pris l\'initiative de vous contacter</h2>
+          <h2 className="lp-title">Pourquoi je propose simplement un échange de 15 minutes</h2>
           <div className="lp-block">
-            <p>{content.whyContact(company)}</p>
-            <p>{content.whyContactDetail}</p>
+            <p>Je ne sais pas encore si mon profil correspond réellement à vos besoins.</p>
+            <p>Je ne sais pas non plus si votre environnement correspond à ce que je recherche.</p>
+            <p>C\'est précisément pour cela que je propose simplement un échange de 15 minutes.</p>
+            <p>L\'objectif n\'est pas de convaincre à tout prix.</p>
+            <p>L\'objectif est de vérifier si une discussion mérite d\'aller plus loin.</p>
           </div>
         </div>
       </div>
