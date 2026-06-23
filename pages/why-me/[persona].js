@@ -1,267 +1,127 @@
 import Head from 'next/head'
-import { useEffect } from 'react'
+import { useEffect, useState, createContext, useContext } from 'react'
 import { useRouter } from 'next/router'
+import frTranslations from './translations/fr.json'
+import enTranslations from './translations/en.json'
 
-const personaContent = {
-  business: {
-    title: 'Pourquoi votre entreprise a besoin de moi',
-    whyContact: (company) => `${company} semble reposer sur une logique avant tout orientée entreprise.`,
-    whyContactDetail: 'C\'est précisément ce qui a retenu mon attention et ce que je peux concrètement apporter.',
-    longDetail: 'Après plus de vingt ans passés à comprendre des environnements complexes, des processus et des organisations, je souhaite mettre cette capacité d\'analyse au service du développement commercial et de la création de valeur.',
-    whatICanBring: [
-      'Compréhension rapide d\'environnements complexes',
-      'Capacité à vulgariser des sujets techniques',
-      'Approche structurée de la prospection',
-      'Autonomie',
-      'Culture du résultat'
-    ],
-    cards: [
-      {
-        problem: 'Structurer et qualifier un volume important de données pour obtenir des contacts exploitables.',
-        action: 'Structuration et qualification d\'une base de données.',
-        result: '908 contacts qualifiés.',
-        why: 'Ce qui m\'intéresse dans ce résultat n\'est pas le volume. C\'est la capacité à transformer une masse de données en opportunités exploitables.'
-      },
-      {
-        problem: 'Une campagne de prospection n\'a aucune valeur si les messages n\'arrivent pas.',
-        action: 'Travail sur la délivrabilité des emails.',
-        result: 'Score passé de 4,6 à 10/10 en quelques jours.',
-        why: 'Parce qu\'avant d\'améliorer une conversion, il faut déjà exister dans la boîte de réception.'
-      },
-      {
-        problem: 'Certaines tâches répétitives consomment une énergie disproportionnée.',
-        action: 'Automatisation du processus.',
-        result: '≈ 2h gagnées par session.',
-        why: 'Le temps gagné peut ensuite être consacré aux échanges commerciaux et aux actions à forte valeur.'
-      }
-    ]
-  },
-  growth: {
-    title: 'Pourquoi votre entreprise a besoin de moi',
-    whyContact: (company) => `${company} semble nécessiter une compréhension fine des données, des outils et de l\'acquisition.`,
-    whyContactDetail: 'Mon parcours m\'a conduit à travailler sur l\'automatisation, l\'analyse, l\'amélioration des processus et la génération d\'opportunités commerciales.',
-    longDetail: 'Ce qui m\'intéresse n\'est pas uniquement d\'utiliser des outils. C\'est identifier les frictions, comprendre les besoins et construire des solutions qui permettent de gagner du temps, de la visibilité ou des opportunités.',
-    whatICanBring: [
-      'Automatisation',
-      'Structuration de données',
-      'Compréhension des outils',
-      'Génération de leads',
-      'Optimisation des processus'
-    ],
-    cards: [
-      {
-        problem: 'Beaucoup de professionnels découvrent progressivement les sujets liés à la donnée, aux outils ou à l\'automatisation.',
-        action: 'Mon parcours a suivi le chemin inverse : j\'ai commencé par les systèmes, puis les applications, puis les processus, puis l\'acquisition.',
-        result: 'Compréhension holistique des enjeux business.',
-        why: 'Avec le temps, j\'ai compris que la croissance n\'était pas seulement une question de trafic ou de volume. Elle repose surtout sur la capacité à identifier les bons problèmes et à construire des solutions simples.'
-      },
-      {
-        problem: 'La croissance n\'est pas seulement une question de volume.',
-        action: 'Identifier les bons problèmes et construire des solutions simples.',
-        result: 'Approche systémique validée.',
-        why: 'C\'est cette logique qui m\'amène aujourd\'hui vers le développement commercial et le management d\'affaires.'
-      }
-    ]
-  },
-  executive: {
-    title: 'Pourquoi votre entreprise a besoin de moi',
-    whyContact: (company) => `Je m\'intéresse particulièrement aux organisations qui recherchent des profils capables de comprendre rapidement un environnement complexe et de devenir opérationnels.`,
-    whyContactDetail: 'Mon expérience m\'a appris à naviguer entre les sujets techniques, humains et organisationnels.',
-    longDetail: 'Cette transversalité me permet souvent d\'identifier rapidement les besoins, les risques et les opportunités.',
-    whatICanBring: [
-      'Vision transverse',
-      'Autonomie',
-      'Capacité d\'analyse',
-      'Compréhension des enjeux business',
-      'Capacité d\'exécution'
-    ],
-    cards: [
-      {
-        problem: 'Après plus de vingt ans dans des environnements techniques et opérationnels, trouver un environnement où contribuer rapidement.',
-        action: 'Reprendre un parcours de formation tout en appliquant directement sur le terrain.',
-        result: 'Capacité à créer de la valeur rapidement.',
-        why: 'Parce que les fonctions commerciales et business occupent progressivement une place centrale dans ce qui me motive : comprendre un besoin, créer de la valeur, développer une activité, faire avancer un projet.'
-      },
-      {
-        problem: 'Je ne cherche pas simplement une alternance.',
-        action: 'Je cherche un environnement dans lequel je pourrai contribuer rapidement.',
-        result: 'Volonté de construire dans la durée.',
-        why: 'Un profil qui ne rentre pas dans une case traditionnelle peut parfois apporter exactement cette vision transversale dont une organisation a besoin.'
-      }
-    ]
-  },
-  'business-development': {
-    title: 'Pourquoi votre croissance mérite plus qu’un commercial classique',
-    whyContact: (company) => `${company} cherche à développer son activité avec une approche structurée et innovante.`,
-    whyContactDetail: 'C’est précisément là que mon parcours hybride entre acquisition, automatisation et growth prend tout son sens.',
-    longDetail: 'Après plus de vingt ans à construire des pipelines, automatiser des processus et générer des opportunités, je mets aujourd’hui cette expertise au service du développement commercial B2B. Mon approche combine data, outils et stratégie pour créer de la valeur rapidement.',
-    whatICanBring: [
-      'Acquisition B2B ciblée',
-      'Prospection multicanale (email, LinkedIn, partenariats)',
-      'Automatisation des processus commerciaux',
-      'Enrichissement et qualification de données',
-      'Génération d’opportunités qualifiées',
-      'Construction de partenariats stratégiques',
-      'Optimisation des pipelines de vente',
-      'Business Intelligence appliquée au commercial'
-    ],
-    cards: [
-      {
-        problem: 'Structurer et qualifier un volume important de données pour obtenir des contacts exploitables.',
-        action: 'Structuration et qualification d’une base de données.',
-        result: '908 contacts qualifiés.',
-        why: 'Ce qui m’intéresse n’est pas le volume, mais la capacité à transformer des données en opportunités exploitables.'
-      },
-      {
-        problem: 'Une campagne de prospection n’a aucune valeur si les messages ne sont pas ouverts.',
-        action: 'Optimisation des campagnes email et LinkedIn.',
-        result: '~50% de taux d’ouverture sur les cibles qualifiées.',
-        why: 'Parce qu’une bonne délivrabilité est la base de toute prospection efficace.'
-      },
-      {
-        problem: 'Certaines tâches répétitives consomment une énergie disproportionnée.',
-        action: 'Automatisation du processus de prospection.',
-        result: '2 à 3h gagnées par session.',
-        why: 'Le temps gagné peut être consacré aux échanges commerciaux et aux actions à forte valeur.'
-      }
-    ]
-  },
-  manager: {
-    title: 'Pourquoi votre équipe a besoin de moi',
-    whyContact: (company) => `Je m\'intéresse particulièrement aux organisations qui recherchent des profils capables de comprendre rapidement un environnement complexe et de devenir opérationnels.`,
-    whyContactDetail: 'Mon expérience m\'a appris à naviguer entre les sujets techniques, humains et organisationnels.',
-    longDetail: 'Cette transversalité me permet souvent d\'identifier rapidement les besoins, les risques et les opportunités.',
-    whatICanBring: [
-      'Vision transverse',
-      'Autonomie',
-      'Capacité d\'analyse',
-      'Compréhension des enjeux business',
-      'Capacité d\'exécution'
-    ],
-    cards: [
-      {
-        problem: 'Après plus de vingt ans dans des environnements techniques et opérationnels, trouver un environnement où contribuer rapidement.',
-        action: 'Reprendre un parcours de formation tout en appliquant directement sur le terrain.',
-        result: 'Capacité à créer de la valeur rapidement.',
-        why: 'Parce que les fonctions commerciales et business occupent progressivement une place centrale dans ce qui me motive : comprendre un besoin, créer de la valeur, développer une activité, faire avancer un projet.'
-      },
-      {
-        problem: 'Je ne cherche pas simplement une alternance.',
-        action: 'Je cherche un environnement dans lequel je pourrai contribuer rapidement.',
-        result: 'Volonté de construire dans la durée.',
-        why: 'Un profil qui ne rentre pas dans une case traditionnelle peut parfois apporter exactement cette vision transversale dont une organisation a besoin.'
-      }
-    ]
-  },
-  rh: {
-    title: 'Pourquoi votre service RH a besoin de moi',
-    whyContact: (company) => `Je m\'intéresse particulièrement aux organisations qui recherchent des profils capables de comprendre rapidement un environnement complexe et de devenir opérationnels.`,
-    whyContactDetail: 'Mon expérience m\'a appris à naviguer entre les sujets techniques, humains et organisationnels.',
-    longDetail: 'Cette transversalité me permet souvent d\'identifier rapidement les besoins, les risques et les opportunités.',
-    whatICanBring: [
-      'Vision transverse',
-      'Autonomie',
-      'Capacité d\'analyse',
-      'Compréhension des enjeux business',
-      'Capacité d\'exécution'
-    ],
-    cards: [
-      {
-        problem: 'Après plus de vingt ans dans des environnements techniques et opérationnels, trouver un environnement où contribuer rapidement.',
-        action: 'Reprendre un parcours de formation tout en appliquant directement sur le terrain.',
-        result: 'Capacité à créer de la valeur rapidement.',
-        why: 'Parce que les fonctions commerciales et business occupent progressivement une place centrale dans ce qui me motive : comprendre un besoin, créer de la valeur, développer une activité, faire avancer un projet.'
-      },
-      {
-        problem: 'Je ne cherche pas simplement une alternance.',
-        action: 'Je cherche un environnement dans lequel je pourrai contribuer rapidement.',
-        result: 'Volonté de construire dans la durée.',
-        why: 'Un profil qui ne rentre pas dans une case traditionnelle peut parfois apporter exactement cette vision transversale dont une organisation a besoin.'
-      }
-    ]
-  },
-  network: {
-    title: 'Pourquoi votre réseau a besoin de moi',
-    whyContact: (company) => `Je m\'intéresse particulièrement aux organisations qui recherchent des profils capables de comprendre rapidement un environnement complexe et de devenir opérationnels.`,
-    whyContactDetail: 'Mon expérience m\'a appris à naviguer entre les sujets techniques, humains et organisationnels.',
-    longDetail: 'Cette transversalité me permet souvent d\'identifier rapidement les besoins, les risques et les opportunités.',
-    whatICanBring: [
-      'Vision transverse',
-      'Autonomie',
-      'Capacité d\'analyse',
-      'Compréhension des enjeux business',
-      'Capacité d\'exécution'
-    ],
-    cards: [
-      {
-        problem: 'Après plus de vingt ans dans des environnements techniques et opérationnels, trouver un environnement où contribuer rapidement.',
-        action: 'Reprendre un parcours de formation tout en appliquant directement sur le terrain.',
-        result: 'Capacité à créer de la valeur rapidement.',
-        why: 'Parce que les fonctions commerciales et business occupent progressivement une place centrale dans ce qui me motive : comprendre un besoin, créer de la valeur, développer une activité, faire avancer un projet.'
-      },
-      {
-        problem: 'Je ne cherche pas simplement une alternance.',
-        action: 'Je cherche un environnement dans lequel je pourrai contribuer rapidement.',
-        result: 'Volonté de construire dans la durée.',
-        why: 'Un profil qui ne rentre pas dans une case traditionnelle peut parfois apporter exactement cette vision transversale dont une organisation a besoin.'
-      }
-    ]
-  },
-  general: {
-    title: 'Pourquoi collaborer avec moi',
-    whyContact: (company) => `Je m\'intéresse particulièrement aux organisations qui recherchent des profils capables de comprendre rapidement un environnement complexe et de devenir opérationnels.`,
-    whyContactDetail: 'Mon expérience m\'a appris à naviguer entre les sujets techniques, humains et organisationnels.',
-    longDetail: 'Cette transversalité me permet souvent d\'identifier rapidement les besoins, les risques et les opportunités.',
-    whatICanBring: [
-      'Vision transverse',
-      'Autonomie',
-      'Capacité d\'analyse',
-      'Compréhension des enjeux business',
-      'Capacité d\'exécution'
-    ],
-    cards: [
-      {
-        problem: 'Après plus de vingt ans dans des environnements techniques et opérationnels, trouver un environnement où contribuer rapidement.',
-        action: 'Reprendre un parcours de formation tout en appliquant directement sur le terrain.',
-        result: 'Capacité à créer de la valeur rapidement.',
-        why: 'Parce que les fonctions commerciales et business occupent progressivement une place centrale dans ce qui me motive : comprendre un besoin, créer de la valeur, développer une activité, faire avancer un projet.'
-      },
-      {
-        problem: 'Je ne cherche pas simplement une alternance.',
-        action: 'Je cherche un environnement dans lequel je pourrai contribuer rapidement.',
-        result: 'Volonté de construire dans la durée.',
-        why: 'Un profil qui ne rentre pas dans une case traditionnelle peut parfois apporter exactement cette vision transversale dont une organisation a besoin.'
-      }
-    ]
-  }
+// ============================================
+// LANGUAGE SYSTEM
+// ============================================
+
+const LanguageContext = createContext()
+
+const translationsMap = {
+  fr: frTranslations,
+  en: enTranslations
 }
 
-const faqItems = [
-  {
-    question: 'Pourquoi reprendre des études aujourd\'hui ?',
-    answer: 'Pour formaliser mes compétences en développement commercial et acquisition B2B, tout en continuant à appliquer cette formation directement sur le terrain.'
-  },
-  {
-    question: 'Pourquoi choisir l\'alternance ?',
-    answer: 'C\'est le meilleur moyen de créer de la valeur rapidement pour une entreprise, tout en bénéficiant d\'un cadre d\'apprentissage structuré.'
-  },
-  {
-    question: 'Souhaitez-vous poursuivre après le diplôme ?',
-    answer: 'Absolument. Je cherche un environnement où je pourrai contribuer sur le long terme, pas seulement pour la durée de l\'alternance.'
-  },
-  {
-    question: 'Accepteriez-vous d\'être encadré ?',
-    answer: 'Bien sûr. Même avec mon expérience, j\'ai beaucoup à apprendre dans le domaine commercial. Un bon encadrement accélère la montée en compétence.'
-  },
-  {
-    question: 'Cherchez-vous réellement une carrière commerciale ?',
-    answer: 'Oui, c\'est une évolution naturelle de mon parcours. Après avoir passé des années à comprendre les systèmes et les processus, je veux maintenant créer de la valeur directement auprès des clients et des partenaires.'
-  }
-]
+export function LanguageProvider({ children }) {
+  const [language, setLanguage] = useState('fr')
+  
+  useEffect(() => {
+    const langCookie = document.cookie.split('; ').find(row => row.startsWith('lang='))
+    if (langCookie) {
+      const lang = langCookie.split('=')[1]
+      if (['fr', 'en'].includes(lang)) {
+        setLanguage(lang)
+      }
+    }
+  }, [])
 
-const timelineItems = [
-  'IT', 'Développement', 'Automatisation', 'Acquisition', 'Business Development', 'Manager d\'Affaires'
-]
+  const switchLanguage = (lang) => {
+    setLanguage(lang)
+    const date = new Date()
+    date.setTime(date.getTime() + 365 * 24 * 60 * 60 * 1000)
+    document.cookie = `lang=${lang}; expires=${date.toUTCString()}; path=/; SameSite=Lax`
+  }
+
+  return (
+    <LanguageContext.Provider value={{ language, switchLanguage }}>
+      {children}
+    </LanguageContext.Provider>
+  )
+}
+
+function LanguageSwitch() {
+  const { language, switchLanguage } = useContext(LanguageContext)
+
+  return (
+    <div style={{
+      position: 'fixed',
+      top: '20px',
+      right: '20px',
+      zIndex: 1000,
+      display: 'flex',
+      gap: '8px',
+      background: 'rgba(255,255,255,0.95)',
+      padding: '8px 12px',
+      borderRadius: '8px',
+      boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+      fontSize: '14px'
+    }}>
+      <button
+        onClick={() => switchLanguage('fr')}
+        style={{
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          padding: '4px',
+          opacity: language === 'fr' ? 1 : 0.6,
+          transition: 'opacity 0.2s'
+        }}
+        title="Français"
+        aria-label="Français"
+      >
+        <img src="/flags/fr.svg" alt="FR" width="24" height="16" />
+      </button>
+      <button
+        onClick={() => switchLanguage('en')}
+        style={{
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          padding: '4px',
+          opacity: language === 'en' ? 1 : 0.6,
+          transition: 'opacity 0.2s'
+        }}
+        title="English"
+        aria-label="English"
+      >
+        <img src="/flags/gb.svg" alt="GB" width="24" height="16" />
+      </button>
+    </div>
+  )
+}
+
+// Helper to get nested translation with placeholder replacement
+function t(path, params = {}) {
+  const { language } = useContext(LanguageContext)
+  const translations = translationsMap[language] || frTranslations
+  
+  const keys = path.split('.')
+  let value = translations
+  
+  for (const key of keys) {
+    if (value && typeof value === 'object' && key in value) {
+      value = value[key]
+    } else {
+      return path
+    }
+  }
+  
+  if (typeof value === 'string') {
+    return value.replace(/\{\w+\}/g, (match) => {
+      const key = match.slice(1, -1)
+      return params[key] || match
+    })
+  }
+  
+  return value
+}
+
+// ============================================
+// PERSONA MAPPING
+// ============================================
 
 const getPersonaKey = (persona) => {
   const mapping = {
@@ -290,14 +150,46 @@ const getPersonaKey = (persona) => {
   return mapping[persona] || 'general'
 }
 
-export default function WhyMePage() {
+const timelineItems = [
+  'IT', 'Développement', 'Automatisation', 'Acquisition', 'Business Development', 'Manager d\'Affaires'
+]
+
+// ============================================
+// MAIN PAGE CONTENT
+// ============================================
+
+function WhyMePageContent() {
   const router = useRouter()
   const { query } = router
+  const { language } = useContext(LanguageContext)
   
   const personaParam = query.persona || 'executive'
   const firstname = query.firstname || 'Test'
   const company = query.company || 'TestCorp'
   
+  const personaKey = getPersonaKey(personaParam)
+  const translations = translationsMap[language] || frTranslations
+  const isExecutive = personaKey === 'executive'
+  
+  // Get persona translations
+  const personaT = translations[personaKey] || translations.executive || translations.general
+  const commonT = translations.common
+
+  // Get whatICanBring
+  const whatICanBringKey = personaT.whatICanBring || 'executive'
+  const whatICanBring = typeof whatICanBringKey === 'string'
+    ? translations.whatICanBring?.[whatICanBringKey] || []
+    : whatICanBringKey
+
+  // Get cards
+  const cardsKey = personaT.cards || 'executive'
+  const cards = typeof cardsKey === 'string'
+    ? translations.cards?.[cardsKey] || []
+    : cardsKey
+
+  // Get FAQ
+  const faq = translations.faq || []
+
   useEffect(() => {
     const initFaq = () => {
       document.querySelectorAll('.lp-faq-question').forEach(question => {
@@ -315,44 +207,45 @@ export default function WhyMePage() {
     }
   }, [])
 
-  const personaKey = getPersonaKey(personaParam)
-  const content = personaContent[personaKey]
-  const isExecutive = personaKey === 'executive'
-  const timelineIntro = isExecutive ? 'Plus de vingt ans d\'expérience' : '22 ans d\'expérience'
+  const timelineIntro = isExecutive 
+    ? commonT.timelineIntroExecutive 
+    : commonT.timelineIntroOther
 
   return (
     <>
       <Head>
-        <title>{firstname ? `Bonjour ${firstname}` : 'Lucas Tymen'} | Lucas Tymen</title>
+        <title>{firstname ? `${commonT.greeting} ${firstname}` : 'Lucas Tymen'} | Lucas Tymen</title>
         <meta name="description" content={`Landing page personnalisée pour ${company}`} />
         <link rel="icon" href="/lucas_profile.png" />
       </Head>
 
+      <LanguageSwitch />
+
       <div className="lp-hero">
         <img src="/lucas_profile.png" alt="Lucas Tymen" className="lp-hero-profile" />
-        <h1>Bonjour {firstname},</h1>
-        <p>Cette page existe pour une raison simple : vous expliquer en moins de deux minutes pourquoi j\'ai pensé qu\'il pouvait être pertinent de vous contacter directement.</p>
+        <h1>{commonT.greeting} {firstname},</h1>
+        <p>{commonT.pagePurpose}</p>
       </div>
 
       <div className="lp-why-section">
         <div className="lp-container">
-          <h2 className="lp-subtitle">Pourquoi cette page existe</h2>
+          <h2 className="lp-subtitle">{commonT.whySectionTitle}</h2>
           <div className="lp-why-grid">
             <div className="lp-why-card">
-              <span className="lp-why-card-label">Entreprise</span>
+              <span className="lp-why-card-label">{commonT.entreprise}</span>
               <span className="lp-why-card-value">{company}</span>
             </div>
             <div className="lp-why-card">
-              <span className="lp-why-card-label">Persona</span>
+              <span className="lp-why-card-label">{commonT.persona}</span>
               <span className="lp-why-card-value">{personaKey.charAt(0).toUpperCase() + personaKey.slice(1)}</span>
             </div>
             <div className="lp-why-card">
-              <span className="lp-why-card-label">Objectif</span>
-              <span className="lp-why-card-value">Comprendre si une collaboration a du sens</span>
+              <span className="lp-why-card-label">{commonT.objectif}</span>
+              <span className="lp-why-card-value">{commonT.objectifValue}</span>
             </div>
             <div className="lp-why-card">
-              <span className="lp-why-card-label">Temps de lecture</span>
-              <span className="lp-why-card-value">2 minutes</span>
+              <span className="lp-why-card-label">{commonT.tempsLecture}</span>
+              <span className="lp-why-card-value">{commonT.tempsLectureValue}</span>
             </div>
           </div>
         </div>
@@ -379,11 +272,11 @@ export default function WhyMePage() {
 
       <div className="lp-section">
         <div className="lp-container">
-          <h1 className="lp-title">{content.title}</h1>
+          <h1 className="lp-title">{personaT.title ? t(`persona.${personaKey}.title`, { company }) : personaT.title}</h1>
           <div className="lp-block">
-            <p>{content.whyContact(company)}</p>
-            <p>{content.whyContactDetail}</p>
-            <p>{content.longDetail}</p>
+            <p>{personaT.whyContact ? t(`persona.${personaKey}.whyContact`, { company }) : typeof personaT.whyContact === 'function' ? personaT.whyContact(company) : personaT.whyContact}</p>
+            <p>{personaT.whyContactDetail}</p>
+            <p>{personaT.longDetail}</p>
           </div>
         </div>
       </div>
@@ -392,10 +285,10 @@ export default function WhyMePage() {
 
       <div className="lp-section">
         <div className="lp-container">
-          <h2 className="lp-subtitle">Ce que je peux apporter</h2>
+          <h2 className="lp-subtitle">{commonT.whatICanBring}</h2>
           <div className="lp-block">
             <ul className="lp-list">
-              {content.whatICanBring.map((item, index) => (
+              {Array.isArray(whatICanBring) && whatICanBring.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
@@ -406,7 +299,7 @@ export default function WhyMePage() {
       <div className="lp-section">
         <div className="lp-container">
           <div className="lp-cards-grid">
-            {content.cards.map((card, index) => (
+            {Array.isArray(cards) && cards.map((card, index) => (
               <div className="lp-card" key={index}>
                 <span className="lp-card-label">PROBLÈME</span>
                 <div className="lp-card-header"><p>{card.problem}</p></div>
@@ -428,20 +321,22 @@ export default function WhyMePage() {
 
       <div className="lp-profile-section">
         <div className="lp-container">
-          <h2 className="lp-subtitle">Ce qui rend mon parcours un peu différent</h2>
+          <h2 className="lp-subtitle">{commonT.profileDifferent}</h2>
           <div className="lp-profile-grid">
             <div className="lp-profile-column">
-              <h3 className="lp-profile-title"><span className="lp-profile-icon cross">❌</span> Profil classique</h3>
+              <h3 className="lp-profile-title"><span className="lp-profile-icon cross">❌</span> {commonT.classicProfile}</h3>
               <div className="lp-profile-timeline">
-                <div className="lp-profile-item">École de commerce</div>
-                <div className="lp-profile-item">Commercial junior</div>
-                <div className="lp-profile-item">Business Developer</div>
+                {commonT.classicTimeline.map((item, idx) => (
+                  <div className="lp-profile-item" key={idx}>{item}</div>
+                ))}
               </div>
             </div>
             <div className="lp-profile-column">
-              <h3 className="lp-profile-title"><span className="lp-profile-icon check">✅</span> Mon parcours</h3>
+              <h3 className="lp-profile-title"><span className="lp-profile-icon check">✅</span> {commonT.myProfile}</h3>
               <div className="lp-profile-timeline">
-                {timelineItems.map((item) => <div className="lp-profile-item" key={item}>{item}</div>)}
+                {commonT.myTimeline.map((item, idx) => (
+                  <div className="lp-profile-item" key={idx}>{item}</div>
+                ))}
               </div>
             </div>
           </div>
@@ -452,13 +347,13 @@ export default function WhyMePage() {
 
       <div className="lp-section">
         <div className="lp-container">
-          <h2 className="lp-title">Pourquoi je propose simplement un échange de 15 minutes</h2>
+          <h2 className="lp-title">{commonT.why15min}</h2>
           <div className="lp-block">
-            <p>Je ne sais pas encore si mon profil correspond réellement à vos besoins.</p>
-            <p>Je ne sais pas non plus si votre environnement correspond à ce que je recherche.</p>
-            <p>C\'est précisément pour cela que je propose simplement un échange de 15 minutes.</p>
-            <p>L\'objectif n\'est pas de convaincre à tout prix.</p>
-            <p>L\'objectif est de vérifier si une discussion mérite d\'aller plus loin.</p>
+            <p>{commonT.why15minText1}</p>
+            <p>{commonT.why15minText2}</p>
+            <p>{commonT.why15minText3}</p>
+            <p>{commonT.why15minText4}</p>
+            <p>{commonT.why15minText5}</p>
           </div>
         </div>
       </div>
@@ -467,8 +362,8 @@ export default function WhyMePage() {
 
       <div className="lp-faq-section">
         <div className="lp-container">
-          <h2 className="lp-subtitle">Questions fréquentes</h2>
-          {faqItems.map((item, index) => (
+          <h2 className="lp-subtitle">{commonT.faqTitle}</h2>
+          {Array.isArray(faq) && faq.map((item, index) => (
             <div className="lp-faq-item" key={index}>
               <div className="lp-faq-question"><span>{item.question}</span></div>
               <div className="lp-faq-answer"><p>{item.answer}</p></div>
@@ -482,19 +377,27 @@ export default function WhyMePage() {
       <div className="lp-section lp-cta-section">
         <div className="lp-container">
           <div className="lp-cta">
-            <h2 className="lp-cta-title">Une question simple</h2>
+            <h2 className="lp-cta-title">{commonT.ctaTitle}</h2>
             <p className="lp-cta-text">
-              Pensez-vous qu\'un échange de 15 minutes puisse avoir du sens ?<br />
-              Si la réponse est non, je comprendrai parfaitement.<br />
-              Si la réponse est peut-être, je serais ravi d\'en discuter.
+              {commonT.ctaText1}<br />
+              {commonT.ctaText2}<br />
+              {commonT.ctaText3}
             </p>
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=lucas.tymen@gmail.com&su=Echange%20avec%20Lucas%20Tymen" className="lp-btn" target="_blank" rel="noopener noreferrer">
-              Répondre à Lucas
+              {commonT.ctaButton}
             </a>
           </div>
         </div>
       </div>
     </>
+  )
+}
+
+export default function WhyMePage() {
+  return (
+    <LanguageProvider>
+      <WhyMePageContent />
+    </LanguageProvider>
   )
 }
 

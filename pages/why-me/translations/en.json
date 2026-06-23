@@ -1,0 +1,181 @@
+{
+  "common": {
+    "greeting": "Hello",
+    "pagePurpose": "This page exists for a simple reason: to explain in under two minutes why I thought it would be relevant to contact you directly.",
+    "whySectionTitle": "Why this page exists",
+    "entreprise": "Company",
+    "persona": "Persona",
+    "objectif": "Objective",
+    "objectifValue": "Understand if a collaboration makes sense",
+    "tempsLecture": "Reading time",
+    "tempsLectureValue": "2 minutes",
+    "timelineIntroExecutive": "Over twenty years of experience",
+    "timelineIntroOther": "22 years of experience",
+    "sectionTitleWhy": "Why your company needs me",
+    "whatICanBring": "What I can bring",
+    "cardsTitle": "Concrete examples",
+    "profileDifferent": "What makes my background a bit different",
+    "classicProfile": "Classic profile",
+    "myProfile": "My journey",
+    "why15min": "Why I propose a simple 15-minute exchange",
+    "why15minText1": "I don't yet know if my profile really matches your needs.",
+    "why15minText2": "I also don't know if your environment matches what I'm looking for.",
+    "why15minText3": "That's precisely why I propose a simple 15-minute exchange.",
+    "why15minText4": "The goal is not to convince at all costs.",
+    "why15minText5": "The goal is to verify if a conversation is worth pursuing.",
+    "faqTitle": "Frequently asked questions",
+    "ctaTitle": "A simple question",
+    "ctaText1": "Do you think a 15-minute exchange could make sense?",
+    "ctaText2": "If the answer is no, I will understand perfectly.",
+    "ctaText3": "If the answer is maybe, I'd be happy to discuss it.",
+    "ctaButton": "Reply to Lucas",
+    "classicTimeline": ["Business School", "Junior Sales", "Business Developer"],
+    "myTimeline": ["IT", "Development", "Automation", "Acquisition", "Business Development", "Account Manager"]
+  },
+  "executive": {
+    "title": "Why your company needs me",
+    "whyContact": "{company} seems to be based on a logic primarily focused on business.",
+    "whyContactDetail": "This is precisely what caught my attention and what I can concretely contribute.",
+    "longDetail": "After more than twenty years of understanding complex environments, processes, and organizations, I want to put this analytical ability at the service of commercial development and value creation."
+  },
+  "growth": {
+    "title": "Why your company needs me",
+    "whyContact": "{company} seems to require a fine understanding of data, tools, and acquisition.",
+    "whyContactDetail": "My journey has led me to work on automation, analysis, process improvement, and lead generation.",
+    "longDetail": "What interests me is not just using tools. It's identifying frictions, understanding needs, and building solutions that save time, provide visibility, or create opportunities."
+  },
+  "business": {
+    "title": "Why your company needs me",
+    "whyContact": "{company} seems to be based on a logic primarily focused on business.",
+    "whyContactDetail": "This is precisely what caught my attention and what I can concretely contribute.",
+    "longDetail": "After more than twenty years of understanding complex environments, processes, and organizations, I want to put this analytical ability at the service of commercial development and value creation."
+  },
+  "business-development": {
+    "title": "Why your growth deserves more than a classic salesperson",
+    "whyContact": "{company} is looking to develop its business with a structured and innovative approach.",
+    "whyContactDetail": "This is precisely where my hybrid background in acquisition, automation, and growth makes perfect sense.",
+    "longDetail": "After more than twenty years of building pipelines, automating processes, and generating opportunities, I now put this expertise at the service of B2B commercial development. My approach combines data, tools, and strategy to create value quickly."
+  },
+  "manager": {
+    "title": "Why your team needs me"
+  },
+  "rh": {
+    "title": "Why your HR department needs me"
+  },
+  "network": {
+    "title": "Why your network needs me"
+  },
+  "general": {
+    "title": "Why collaborate with me"
+  },
+  "faq": [
+    {"question": "Why go back to school today?", "answer": "To formalize my skills in B2B commercial development and acquisition, while continuing to apply this training directly in the field."},
+    {"question": "Why choose an apprenticeship?", "answer": "It's the best way to quickly create value for a company, while benefiting from a structured learning framework."},
+    {"question": "Do you want to continue after the diploma?", "answer": "Absolutely. I'm looking for an environment where I can contribute in the long term, not just for the duration of the apprenticeship."},
+    {"question": "Would you accept being supervised?", "answer": "Of course. Even with my experience, I still have a lot to learn in the commercial field. Good supervision accelerates skill development."},
+    {"question": "Are you really looking for a sales career?", "answer": "Yes, it's a natural evolution of my journey. After spending years understanding systems and processes, I now want to create value directly with clients and partners."}
+  ],
+  "whatICanBring": {
+    "business": [
+      "Quick understanding of complex environments",
+      "Ability to simplify technical subjects",
+      "Structured approach to prospecting",
+      "Autonomy",
+      "Results-driven culture"
+    ],
+    "growth": [
+      "Automation",
+      "Data structuring",
+      "Tool understanding",
+      "Lead generation",
+      "Process optimization"
+    ],
+    "executive": [
+      "Cross-functional vision",
+      "Autonomy",
+      "Analytical skills",
+      "Business acumen",
+      "Execution ability"
+    ],
+    "business-development": [
+      "Targeted B2B acquisition",
+      "Multi-channel prospecting (email, LinkedIn, partnerships)",
+      "Automation of commercial processes",
+      "Data enrichment and qualification",
+      "Qualified opportunity generation",
+      "Strategic partnership building",
+      "Sales pipeline optimization",
+      "Business Intelligence applied to sales"
+    ]
+  },
+  "cards": {
+    "business": [
+      {
+        "problem": "Structuring and qualifying a large volume of data to obtain actionable contacts.",
+        "action": "Database structuring and qualification.",
+        "result": "908 qualified contacts.",
+        "why": "What interests me about this result is not the volume. It's the ability to transform a mass of data into actionable opportunities."
+      },
+      {
+        "problem": "A prospecting campaign has no value if the messages don't arrive.",
+        "action": "Work on email deliverability.",
+        "result": "Score increased from 4.6 to 10/10 in a few days.",
+        "why": "Because before improving conversion, you first need to exist in the inbox."
+      },
+      {
+        "problem": "Some repetitive tasks consume a disproportionate amount of energy.",
+        "action": "Process automation.",
+        "result": "≈ 2 hours saved per session.",
+        "why": "The time saved can then be devoted to commercial exchanges and high-value actions."
+      }
+    ],
+    "growth": [
+      {
+        "problem": "Many professionals gradually discover topics related to data, tools, or automation.",
+        "action": "My journey followed the reverse path: I started with systems, then applications, then processes, then acquisition.",
+        "result": "Holistic understanding of business issues.",
+        "why": "Over time, I've realized that growth isn't just about traffic or volume. It's mainly about the ability to identify the right problems and build simple solutions."
+      },
+      {
+        "problem": "Growth isn't just about volume.",
+        "action": "Identify the right problems and build simple solutions.",
+        "result": "Systemic approach validated.",
+        "why": "This logic is what leads me today towards commercial development and account management."
+      }
+    ],
+    "executive": [
+      {
+        "problem": "After more than twenty years in technical and operational environments, finding an environment where I can contribute quickly.",
+        "action": "Resume a training path while applying it directly in the field.",
+        "result": "Ability to create value quickly.",
+        "why": "Because commercial and business functions are progressively taking a central place in what motivates me: understanding a need, creating value, developing an activity, moving a project forward."
+      },
+      {
+        "problem": "I'm not just looking for an apprenticeship.",
+        "action": "I'm looking for an environment where I can contribute quickly.",
+        "result": "Desire to build for the long term.",
+        "why": "A profile that doesn't fit a traditional box can sometimes bring exactly the cross-functional vision an organization needs."
+      }
+    ],
+    "business-development": [
+      {
+        "problem": "Structuring and qualifying a large volume of data to obtain actionable contacts.",
+        "action": "Database structuring and qualification.",
+        "result": "908 qualified contacts.",
+        "why": "What interests me is not the volume, but the ability to transform data into actionable opportunities."
+      },
+      {
+        "problem": "A prospecting campaign has no value if messages are not opened.",
+        "action": "Optimization of email and LinkedIn campaigns.",
+        "result": "~50% open rate on qualified targets.",
+        "why": "Because good deliverability is the foundation of any effective prospecting."
+      },
+      {
+        "problem": "Some repetitive tasks consume a disproportionate amount of energy.",
+        "action": "Prospecting process automation.",
+        "result": "2 to 3 hours saved per session.",
+        "why": "The time saved can be devoted to commercial exchanges and high-value actions."
+      }
+    ]
+  }
+}
