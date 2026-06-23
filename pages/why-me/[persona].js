@@ -505,6 +505,11 @@ export async function getStaticPaths() {
       { params: { persona: 'growth' } },
       { params: { persona: 'executive' } },
       { params: { persona: 'sales' } },
+      { params: { persona: 'business-development' } },
+      { params: { persona: 'manager' } },
+      { params: { persona: 'rh' } },
+      { params: { persona: 'network' } },
+      { params: { persona: 'general' } },
     ],
     fallback: false,
   }
