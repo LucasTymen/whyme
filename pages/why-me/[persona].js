@@ -89,6 +89,150 @@ const personaContent = {
         why: 'Un profil qui ne rentre pas dans une case traditionnelle peut parfois apporter exactement cette vision transversale dont une organisation a besoin.'
       }
     ]
+  },
+  'business-development': {
+    title: 'Pourquoi votre croissance mérite plus qu’un commercial classique',
+    whyContact: (company) => `${company} cherche à développer son activité avec une approche structurée et innovante.`,
+    whyContactDetail: 'C’est précisément là que mon parcours hybride entre acquisition, automatisation et growth prend tout son sens.',
+    longDetail: 'Après plus de vingt ans à construire des pipelines, automatiser des processus et générer des opportunités, je mets aujourd’hui cette expertise au service du développement commercial B2B. Mon approche combine data, outils et stratégie pour créer de la valeur rapidement.',
+    whatICanBring: [
+      'Acquisition B2B ciblée',
+      'Prospection multicanale (email, LinkedIn, partenariats)',
+      'Automatisation des processus commerciaux',
+      'Enrichissement et qualification de données',
+      'Génération d’opportunités qualifiées',
+      'Construction de partenariats stratégiques',
+      'Optimisation des pipelines de vente',
+      'Business Intelligence appliquée au commercial'
+    ],
+    cards: [
+      {
+        problem: 'Structurer et qualifier un volume important de données pour obtenir des contacts exploitables.',
+        action: 'Structuration et qualification d’une base de données.',
+        result: '908 contacts qualifiés.',
+        why: 'Ce qui m’intéresse n’est pas le volume, mais la capacité à transformer des données en opportunités exploitables.'
+      },
+      {
+        problem: 'Une campagne de prospection n’a aucune valeur si les messages ne sont pas ouverts.',
+        action: 'Optimisation des campagnes email et LinkedIn.',
+        result: '~50% de taux d’ouverture sur les cibles qualifiées.',
+        why: 'Parce qu’une bonne délivrabilité est la base de toute prospection efficace.'
+      },
+      {
+        problem: 'Certaines tâches répétitives consomment une énergie disproportionnée.',
+        action: 'Automatisation du processus de prospection.',
+        result: '2 à 3h gagnées par session.',
+        why: 'Le temps gagné peut être consacré aux échanges commerciaux et aux actions à forte valeur.'
+      }
+    ]
+  },
+  manager: {
+    title: 'Pourquoi votre équipe a besoin de moi',
+    whyContact: (company) => `Je m\'intéresse particulièrement aux organisations qui recherchent des profils capables de comprendre rapidement un environnement complexe et de devenir opérationnels.`,
+    whyContactDetail: 'Mon expérience m\'a appris à naviguer entre les sujets techniques, humains et organisationnels.',
+    longDetail: 'Cette transversalité me permet souvent d\'identifier rapidement les besoins, les risques et les opportunités.',
+    whatICanBring: [
+      'Vision transverse',
+      'Autonomie',
+      'Capacité d\'analyse',
+      'Compréhension des enjeux business',
+      'Capacité d\'exécution'
+    ],
+    cards: [
+      {
+        problem: 'Après plus de vingt ans dans des environnements techniques et opérationnels, trouver un environnement où contribuer rapidement.',
+        action: 'Reprendre un parcours de formation tout en appliquant directement sur le terrain.',
+        result: 'Capacité à créer de la valeur rapidement.',
+        why: 'Parce que les fonctions commerciales et business occupent progressivement une place centrale dans ce qui me motive : comprendre un besoin, créer de la valeur, développer une activité, faire avancer un projet.'
+      },
+      {
+        problem: 'Je ne cherche pas simplement une alternance.',
+        action: 'Je cherche un environnement dans lequel je pourrai contribuer rapidement.',
+        result: 'Volonté de construire dans la durée.',
+        why: 'Un profil qui ne rentre pas dans une case traditionnelle peut parfois apporter exactement cette vision transversale dont une organisation a besoin.'
+      }
+    ]
+  },
+  rh: {
+    title: 'Pourquoi votre service RH a besoin de moi',
+    whyContact: (company) => `Je m\'intéresse particulièrement aux organisations qui recherchent des profils capables de comprendre rapidement un environnement complexe et de devenir opérationnels.`,
+    whyContactDetail: 'Mon expérience m\'a appris à naviguer entre les sujets techniques, humains et organisationnels.',
+    longDetail: 'Cette transversalité me permet souvent d\'identifier rapidement les besoins, les risques et les opportunités.',
+    whatICanBring: [
+      'Vision transverse',
+      'Autonomie',
+      'Capacité d\'analyse',
+      'Compréhension des enjeux business',
+      'Capacité d\'exécution'
+    ],
+    cards: [
+      {
+        problem: 'Après plus de vingt ans dans des environnements techniques et opérationnels, trouver un environnement où contribuer rapidement.',
+        action: 'Reprendre un parcours de formation tout en appliquant directement sur le terrain.',
+        result: 'Capacité à créer de la valeur rapidement.',
+        why: 'Parce que les fonctions commerciales et business occupent progressivement une place centrale dans ce qui me motive : comprendre un besoin, créer de la valeur, développer une activité, faire avancer un projet.'
+      },
+      {
+        problem: 'Je ne cherche pas simplement une alternance.',
+        action: 'Je cherche un environnement dans lequel je pourrai contribuer rapidement.',
+        result: 'Volonté de construire dans la durée.',
+        why: 'Un profil qui ne rentre pas dans une case traditionnelle peut parfois apporter exactement cette vision transversale dont une organisation a besoin.'
+      }
+    ]
+  },
+  network: {
+    title: 'Pourquoi votre réseau a besoin de moi',
+    whyContact: (company) => `Je m\'intéresse particulièrement aux organisations qui recherchent des profils capables de comprendre rapidement un environnement complexe et de devenir opérationnels.`,
+    whyContactDetail: 'Mon expérience m\'a appris à naviguer entre les sujets techniques, humains et organisationnels.',
+    longDetail: 'Cette transversalité me permet souvent d\'identifier rapidement les besoins, les risques et les opportunités.',
+    whatICanBring: [
+      'Vision transverse',
+      'Autonomie',
+      'Capacité d\'analyse',
+      'Compréhension des enjeux business',
+      'Capacité d\'exécution'
+    ],
+    cards: [
+      {
+        problem: 'Après plus de vingt ans dans des environnements techniques et opérationnels, trouver un environnement où contribuer rapidement.',
+        action: 'Reprendre un parcours de formation tout en appliquant directement sur le terrain.',
+        result: 'Capacité à créer de la valeur rapidement.',
+        why: 'Parce que les fonctions commerciales et business occupent progressivement une place centrale dans ce qui me motive : comprendre un besoin, créer de la valeur, développer une activité, faire avancer un projet.'
+      },
+      {
+        problem: 'Je ne cherche pas simplement une alternance.',
+        action: 'Je cherche un environnement dans lequel je pourrai contribuer rapidement.',
+        result: 'Volonté de construire dans la durée.',
+        why: 'Un profil qui ne rentre pas dans une case traditionnelle peut parfois apporter exactement cette vision transversale dont une organisation a besoin.'
+      }
+    ]
+  },
+  general: {
+    title: 'Pourquoi collaborer avec moi',
+    whyContact: (company) => `Je m\'intéresse particulièrement aux organisations qui recherchent des profils capables de comprendre rapidement un environnement complexe et de devenir opérationnels.`,
+    whyContactDetail: 'Mon expérience m\'a appris à naviguer entre les sujets techniques, humains et organisationnels.',
+    longDetail: 'Cette transversalité me permet souvent d\'identifier rapidement les besoins, les risques et les opportunités.',
+    whatICanBring: [
+      'Vision transverse',
+      'Autonomie',
+      'Capacité d\'analyse',
+      'Compréhension des enjeux business',
+      'Capacité d\'exécution'
+    ],
+    cards: [
+      {
+        problem: 'Après plus de vingt ans dans des environnements techniques et opérationnels, trouver un environnement où contribuer rapidement.',
+        action: 'Reprendre un parcours de formation tout en appliquant directement sur le terrain.',
+        result: 'Capacité à créer de la valeur rapidement.',
+        why: 'Parce que les fonctions commerciales et business occupent progressivement une place centrale dans ce qui me motive : comprendre un besoin, créer de la valeur, développer une activité, faire avancer un projet.'
+      },
+      {
+        problem: 'Je ne cherche pas simplement une alternance.',
+        action: 'Je cherche un environnement dans lequel je pourrai contribuer rapidement.',
+        result: 'Volonté de construire dans la durée.',
+        why: 'Un profil qui ne rentre pas dans une case traditionnelle peut parfois apporter exactement cette vision transversale dont une organisation a besoin.'
+      }
+    ]
   }
 }
 
@@ -121,11 +265,29 @@ const timelineItems = [
 
 const getPersonaKey = (persona) => {
   const mapping = {
-    'sales': 'business', 'business': 'business', 'growth': 'growth',
-    'executive': 'executive', '1': 'executive', '2': 'business',
-    '3': 'executive', '4': 'growth', '5': 'executive', '6': 'business'
+    'sales': 'business-development',
+    'business': 'business-development',
+    'growth': 'growth',
+    'executive': 'executive',
+    'manager': 'manager',
+    'rh': 'rh',
+    'network': 'network',
+    'general': 'general',
+    '1': 'executive',
+    '2': 'manager',
+    '3': 'rh',
+    '4': 'growth',
+    '5': 'network',
+    '6': 'business-development',
+    'persona_1': 'executive',
+    'persona_2': 'manager',
+    'persona_3': 'rh',
+    'persona_4': 'growth',
+    'persona_5': 'network',
+    'persona_6': 'business-development',
+    'fallback': 'general'
   }
-  return mapping[persona] || 'executive'
+  return mapping[persona] || 'general'
 }
 
 export default function WhyMePage() {
