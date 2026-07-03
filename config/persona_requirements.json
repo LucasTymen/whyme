@@ -1,0 +1,48 @@
+{
+  "executive": [
+    "title",
+    "whyContact",
+    "whyContactDetail",
+    "longDetail"
+  ],
+  "growth": [
+    "title",
+    "whyContact",
+    "whyContactDetail",
+    "longDetail",
+    "cta"
+  ],
+  "manager": [
+    "title",
+    "whyContact",
+    "whyContactDetail",
+    "longDetail"
+  ],
+  "rh": [
+    "title",
+    "whyContact",
+    "whyContactDetail",
+    "longDetail"
+  ],
+  "network": [
+    "title",
+    "whyContact",
+    "whyContactDetail",
+    "longDetail"
+  ],
+  "business": [
+    "title",
+    "whyContact",
+    "whyContactDetail",
+    "longDetail"
+  ],
+  "business-development": [
+    "title",
+    "whyContact",
+    "whyContactDetail",
+    "longDetail"
+  ],
+  "general": [
+    "title"
+  ]
+}

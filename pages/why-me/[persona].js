@@ -105,7 +105,10 @@ function t(path, params = {}) {
     if (value && typeof value === 'object' && key in value) {
       value = value[key]
     } else {
-      return path
+      if (process.env.NODE_ENV === 'development') {
+        console.warn(`[i18n] Missing translation: "${path}"`)
+      }
+      return ''
     }
   }
   
@@ -272,9 +275,9 @@ function WhyMePageContent() {
 
       <div className="lp-section">
         <div className="lp-container">
-          <h1 className="lp-title">{personaT.title ? t(`persona.${personaKey}.title`, { company }) : personaT.title}</h1>
+          <h1 className="lp-title">{personaT.title ? t(`${personaKey}.title`, { company }) : personaT.title}</h1>
           <div className="lp-block">
-            <p>{personaT.whyContact ? t(`persona.${personaKey}.whyContact`, { company }) : typeof personaT.whyContact === 'function' ? personaT.whyContact(company) : personaT.whyContact}</p>
+            <p>{personaT.whyContact ? t(`${personaKey}.whyContact`, { company }) : typeof personaT.whyContact === 'function' ? personaT.whyContact(company) : personaT.whyContact}</p>
             <p>{personaT.whyContactDetail}</p>
             <p>{personaT.longDetail}</p>
           </div>
