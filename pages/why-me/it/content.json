@@ -1,0 +1,180 @@
+{
+  "common": {
+    "greeting": "Bonjour",
+    "pagePurpose": "Cette page existe pour une raison simple : vous expliquer en moins de deux minutes pourquoi le profil IT que je propose peut être pertinent pour votre organisation.",
+    "companyFallback": "Votre organisation",
+    "whySectionTitle": "Pourquoi cette page existe",
+    "entreprise": "Entreprise",
+    "segment": "Segment",
+    "objectif": "Objectif",
+    "objectifValue": "Comprendre si une collaboration a du sens",
+    "tempsLecture": "Temps de lecture",
+    "tempsLectureValue": "2 minutes",
+    "timelineIntro": "Plus de vingt ans d'expérience IT opérationnelle, aujourd'hui renforcés par le développement et l'automatisation.",
+    "timeline": [
+      "Systèmes & Réseaux",
+      "Support & Exploitation",
+      "Coordination",
+      "Développement",
+      "Automatisation",
+      "IT / SI"
+    ],
+    "socleParagraph": "L'informatique constitue le socle historique de mon parcours. Mes expériences récentes en développement, data et automatisation viennent aujourd'hui renforcer cette expérience opérationnelle.",
+    "whatICanBringTitle": "Ce que je peux apporter",
+    "cardsTitle": "Exemples concrets",
+    "cards": [
+      {
+        "problem": "Un incident informatique peut empêcher une équipe de travailler.",
+        "action": "Diagnostic initial, évaluation de l'impact, intervention directe lorsque le problème relève de mon périmètre, ou mobilisation du spécialiste / prestataire approprié.",
+        "result": "Maintien ou rétablissement du service dans un environnement multisite d'environ 300 postes.",
+        "why": "L'objectif de l'exploitation IT est de permettre à l'organisation de continuer à fonctionner."
+      },
+      {
+        "problem": "Résoudre plusieurs fois le même incident mobilise inutilement support et utilisateurs.",
+        "action": "Automatisation de tâches récurrentes et accompagnement des utilisateurs.",
+        "result": "-30 % d'incidents récurrents.",
+        "why": "Une bonne exploitation ne consiste pas seulement à résoudre les incidents : elle cherche également à éviter leur répétition."
+      },
+      {
+        "problem": "Certains besoins opérationnels ne sont pas correctement couverts par les outils existants.",
+        "action": "Développement de solutions utilisant notamment Python, API, bases de données, Docker et automatisation.",
+        "result": "Des outils permettant de traiter, structurer, rechercher ou exploiter des données selon le besoin.",
+        "why": "Je peux exploiter l'existant mais également construire ou automatiser un outil lorsqu'un processus mérite d'être amélioré."
+      }
+    ],
+    "profileDifferent": "Ce qui différencie mon parcours",
+    "classicProfile": "Profil spécialisé",
+    "myProfile": "Mon profil transversal",
+    "classicTimeline": [
+      "Support technique seul",
+      "Administration traditionnelle",
+      "Développement sans socle IT"
+    ],
+    "myTimeline": [
+      "IT opérationnel",
+      "Coordination & pilotage",
+      "Management opérationnel",
+      "Développement & automatisation",
+      "Utilisateurs & besoins métier"
+    ],
+    "why15min": "Pourquoi échanger 15 minutes ?",
+    "why15minTexts": [
+      "Mon parcours combine exploitation IT, coordination opérationnelle, management et automatisation. Un échange court permet simplement de voir si cette combinaison peut répondre à un enjeu actuel ou à venir de votre organisation."
+    ],
+    "faqTitle": "Questions fréquentes",
+    "faq": [
+      {
+        "question": "Pourquoi ce recentrage vers l'IT ?",
+        "answer": "L'informatique constitue le socle historique de mon parcours. Mes expériences récentes en développement et automatisation viennent compléter cette expérience opérationnelle."
+      },
+      {
+        "question": "Quel type d'environnement recherchez-vous ?",
+        "answer": "Un environnement où la polyvalence technique, la proximité avec les utilisateurs et la capacité à faire évoluer les outils ont une valeur réelle."
+      },
+      {
+        "question": "Êtes-vous plutôt infrastructure ou développement ?",
+        "answer": "Le socle est l'exploitation IT, les systèmes, les réseaux et le support. Le développement et l'automatisation sont des compétences complémentaires utilisées pour améliorer les outils et les processus."
+      },
+      {
+        "question": "Êtes-vous toujours opérationnel techniquement ?",
+        "answer": "Oui. Les projets récents mobilisent notamment Python, API REST, Docker, Linux et bases de données, en complément de l'expérience systèmes, réseaux et support."
+      }
+    ],
+    "ctaTitle": "Échangeons",
+    "ctaTexts": [
+      "Échangeons 15 minutes pour voir si mon expérience peut être utile à votre organisation."
+    ],
+    "ctaButton": "Répondre à Lucas"
+  },
+  "segments": {
+    "systems-networks": {
+      "label": "Systèmes & Réseaux",
+      "title": "Ce qu'un profil Systèmes & Réseaux opérationnel peut apporter à {company}",
+      "titleGeneric": "Ce qu'un profil Systèmes & Réseaux opérationnel peut apporter à votre organisation",
+      "angle": "Faire fonctionner un environnement technique fiable au quotidien.",
+      "whyContact": "Administrer un environnement multisite demande des bases solides : systèmes, annuaire, messagerie, réseaux, sauvegardes et diagnostic.",
+      "longDetail": "De Windows et Linux à Active Directory et Microsoft 365, en passant par un serveur Linux GLPI avec Apache, MariaDB et PHP, j'ai travaillé dans des environnements multisites d'environ 300 postes : TCP/IP, DNS, DHCP, LAN, Wi-Fi, VLAN, sauvegardes, monitoring, virtualisation (VMware, VirtualBox, Synology). Le diagnostic y est un réflexe quotidien.",
+      "whatICanBring": [
+        "Windows",
+        "Linux",
+        "Active Directory",
+        "Microsoft 365",
+        "GLPI / FusionInventory",
+        "TCP/IP, DNS, DHCP",
+        "LAN, Wi-Fi, VLAN",
+        "Sauvegardes",
+        "Monitoring",
+        "Virtualisation (VMware, VirtualBox, Synology)",
+        "Environnement multisite",
+        "Diagnostic"
+      ]
+    },
+    "infra-support-mco": {
+      "label": "Infrastructure / Support / MCO",
+      "title": "Ce qu'un profil Infrastructure / Support / MCO peut apporter à {company}",
+      "titleGeneric": "Ce qu'un profil Infrastructure / Support / MCO peut apporter à votre organisation",
+      "angle": "Maintenir le service, diagnostiquer rapidement et réduire les incidents récurrents.",
+      "whyContact": "Faire vivre un SI au quotidien, c'est garantir la continuité de service, diagnostiquer les incidents, accompagner les utilisateurs et faire en sorte qu'ils ne se répètent pas.",
+      "longDetail": "Exploitation et support dans un environnement multisite d'environ 300 postes : diagnostic d'incidents, support utilisateurs N1/N2, helpdesk / ITSM, continuité de service et retour à la normale, parc et équipements, téléphonie, câblage et Wi-Fi. Cette exploitation comprend également la coordination des intervenants et prestataires lorsque leur mobilisation est nécessaire, avec un objectif simple : permettre à l'organisation de continuer à fonctionner.",
+      "whatICanBring": [
+        "Continuité de service",
+        "Diagnostic d'incidents",
+        "Support utilisateurs N1/N2",
+        "Helpdesk / ITSM",
+        "Parc et équipements",
+        "Téléphonie, câblage, Wi-Fi",
+        "Suivi des prestataires",
+        "Organisation des interventions",
+        "Prévention des incidents récurrents"
+      ]
+    },
+    "coordination-si": {
+      "label": "Coordination IT / SI",
+      "title": "Ce qu'un profil Coordination IT / SI peut apporter à {company}",
+      "titleGeneric": "Ce qu'un profil Coordination IT / SI peut apporter à votre organisation",
+      "angle": "Relier utilisateurs, technique, prestataires et direction pour faire avancer le SI.",
+      "whyContact": "Faire avancer un SI, ce n'est pas seulement intervenir sur la technique : c'est comprendre le besoin, arbitrer entre intervention directe et spécialiste, et coordonner les intervenants.",
+      "longDetail": "Ma valeur ne se réduit pas à savoir intervenir techniquement : je sais prendre en charge un sujet opérationnel, identifier ce qui peut être traité directement, mobiliser les bons intervenants lorsque nécessaire, coordonner l'exécution et suivre le sujet jusqu'au retour au service.",
+      "pilotage": {
+        "title": "Pilotage opérationnel & coordination d'équipe",
+        "texts": [
+          "Comprendre et analyser le besoin, comparer les options, arbitrer, intervenir directement ou mobiliser un prestataire, coordonner puis contrôler jusqu'au retour au service : c'est la logique de pilotage opérationnel qui structure mon approche.",
+          "Elle s'appuie également sur une expérience de management opérationnel et de coordination d'équipe acquise dans des fonctions de Responsable des Services Techniques."
+        ],
+        "items": [
+          "Comparaison de solutions et coordination de prestataires",
+          "Organisation et suivi des interventions, conformité et délais",
+          "Accompagnement de changements d'équipements et de réaménagements"
+        ]
+      },
+      "whatICanBring": [
+        "Compréhension du besoin & diagnostic",
+        "Continuité de service",
+        "Coordination utilisateurs / technique / prestataires",
+        "Pilotage opérationnel",
+        "Développement & automatisation"
+      ]
+    },
+    "applications-automation": {
+      "label": "Applications & Automatisation",
+      "title": "Ce qu'un profil Applications & Automatisation peut apporter à {company}",
+      "titleGeneric": "Ce qu'un profil Applications & Automatisation peut apporter à votre organisation",
+      "angle": "Faire évoluer les outils et automatiser ce qui mérite de l'être.",
+      "whyContact": "Certains besoins opérationnels ne sont pas correctement couverts par les outils existants. Les faire évoluer, voire construire l'outil manquant, est souvent plus efficace que de s'adapter.",
+      "longDetail": "Développement d'outils avec Python, Django, FastAPI, API REST, Docker et Docker Compose, PostgreSQL, SQL Server, Redis, Celery, Git, sous Linux : traitement et structuration de données, automatisation de tâches récurrentes, outils internes. Le socle reste l'IT, l'exploitation et les utilisateurs.",
+      "whatICanBring": [
+        "Python",
+        "API REST, FastAPI, Django",
+        "Docker / Docker Compose",
+        "PostgreSQL, SQL Server, Redis",
+        "Celery",
+        "Linux",
+        "Git",
+        "Bases de données",
+        "Traitement et structuration de données",
+        "Automatisation",
+        "Outils internes"
+      ]
+    }
+  }
+}

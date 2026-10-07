@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useEffect, useState, createContext, useContext } from 'react'
+import { Fragment, useEffect, useState, createContext, useContext } from 'react'
 import { useRouter } from 'next/router'
 import frTranslations from './translations/fr.json'
 import enTranslations from './translations/en.json'
@@ -217,7 +217,7 @@ function WhyMePageContent() {
   return (
     <>
       <Head>
-        <title>{firstname ? `${commonT.greeting} ${firstname}` : 'Lucas Tymen'} | Lucas Tymen</title>
+        <title>{`${firstname ? `${commonT.greeting} ${firstname}` : 'Lucas Tymen'} | Lucas Tymen`}</title>
         <meta name="description" content={`Landing page personnalisée pour ${company}`} />
         <link rel="icon" href="/lucas_profile.png" />
       </Head>
@@ -260,13 +260,13 @@ function WhyMePageContent() {
         <p className="lp-timeline-intro">{timelineIntro}</p>
         <div className="lp-timeline">
           {timelineItems.map((item, index) => (
-            <>
-              <div className="lp-timeline-item" key={item}>
+            <Fragment key={item}>
+              <div className="lp-timeline-item">
                 <span className="lp-timeline-text">{item}</span>
                 <span className="lp-timeline-dot"></span>
               </div>
               {index < timelineItems.length - 1 && <div className="lp-timeline-connector"></div>}
-            </>
+            </Fragment>
           ))}
         </div>
       </div>
